@@ -11,6 +11,13 @@
         table{
             width: 500px;
             border-collapse: collapse;
+            position: relative;
+        }
+        caption{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgrey;
         }
         td, th{
             border: 1px solid black;
@@ -20,15 +27,30 @@
             background-color: gray;
             color: white;
         }
+        thead > tr > th{
+            position: sticky;
+            top: 0;
+            background-color: gray;
+        }
+        .numero{
+            text-align: right;
+        }
+        tbody tr:nth-child(odd){
+            background-color: white;
+        }
+        tbody tr:nth-child(even){
+            background-color: lightgrey;
+        }
     </style>
 </head>
 <body>
     <h1>Uso de tabelas grandes</h1>
     <table>
+        <caption>População da Unidades Federais</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th class="numero">População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 89px;">População</th>
             </tr>
         </thead>
         <tbody>
@@ -51,10 +73,6 @@
             <tr>
                 <td>Paraná</td>
                 <td class="numero">11 824 665</td>
-            </tr>
-            <tr>
-                <td>Rio Grande do Sul</td>
-                <td class="numero">11 229 915</td>
             </tr>
             <tr>
                 <td>Rio Grande do Sul</td>
@@ -147,8 +165,8 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
-                <td>212 583 750</td>
+                <th scope="row">Total de Habitantes</th>
+                <td><strong>212 583 750</strong></td>
             </tr>
         </tfoot>
     </table>
